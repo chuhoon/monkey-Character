@@ -1,0 +1,281 @@
+/* animaion */
+@keyframes 귀오른쪽 {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(45deg) translate(10px);
+  }
+}
+@keyframes 귀왼쪽 {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(-45deg) translate(-10px);
+  }
+}
+
+@keyframes 두근 {
+  from {
+    transform: scale(1) rotate(-45deg);
+  }
+  to {
+    transform: scale(0.6) rotate(-45deg);
+  }
+}
+
+/* reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* setting */
+
+:root {
+  --salsek: #fef3df;
+  --galsek: #943b3d;
+  --bolsek: #f9c3c6;
+}
+
+/* 하트 */
+.heart {
+  position: absolute;
+  margin: 0px auto;
+  /* top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; */
+  background-color: pink;
+  height: 40px;
+  width: 40px;
+  transform: rotate(-45deg);
+  animation: 두근 0.6s infinite alternate;
+}
+
+.heart.one {
+  top: 100px;
+  left: 300px;
+}
+
+.heart.two {
+  right: 300px;
+  top: 100px;
+}
+
+.heart.three {
+  bottom: 300px;
+  left: 100px;
+}
+
+.heart.four {
+  bottom: 90px;
+  left: 400px;
+}
+
+.heart.five {
+  bottom: 200px;
+  right: 150px;
+}
+
+.heart::before {
+  content: '';
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -25px;
+  left: 0px;
+}
+
+.heart::after {
+  content: '';
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 25px;
+}
+
+.cmonkey {
+  position: relative;
+  top: 100px;
+  margin: 100px auto;
+  width: 400px;
+  height: 380px;
+}
+
+/* 얼굴 */
+.cmonkey .face {
+  position: absolute;
+  bottom: 0;
+  width: 450px;
+  height: 400px;
+  border-radius: 50%;
+  border: 5px solid #000;
+  background-color: #943b3d;
+  z-index: 100;
+}
+
+/* 얼굴 조각 하단 부분 */
+
+.cmonkey .face .inface_mouthcover {
+  position: absolute;
+  bottom: 116px;
+  left: 110px;
+  width: 220px;
+  height: 100px;
+  background-color: var(--salsek);
+  z-index: 130;
+}
+.cmonkey .face .inface_bottom {
+  position: absolute;
+  bottom: 5px;
+  left: 75px;
+  width: 300px;
+  height: 150px;
+  background-color: var(--salsek);
+  border-radius: 50% 50% 50% 50%;
+  z-index: 110;
+}
+
+/* 얼굴 조각 상단 부분 */
+
+.cmonkey .infacehigh {
+  position: absolute;
+  bottom: 90px;
+  width: 240px;
+  height: 240px;
+  background-color: var(--salsek);
+  border-radius: 50%;
+  z-index: 110;
+}
+
+.cmonkey .infacehigh.left {
+  left: 50px;
+}
+.cmonkey .infacehigh.right {
+  left: 160px;
+}
+
+/* 몽키 귀 */
+
+.cmonkey .ear {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 5px solid #000;
+  background-color: var(--galsek);
+  border-radius: 50%;
+}
+.cmonkey .ear.left {
+  top: 50px;
+  right: 350px;
+  transform: rotate(270deg);
+  animation: 귀왼쪽 1s infinite alternate;
+  animation-delay: 1s;
+}
+.cmonkey .ear.right {
+  top: 50px;
+  left: 400px;
+  transform: rotate(90deg);
+  animation: 귀오른쪽 1s infinite alternate;
+  animation-delay: 1s;
+}
+.cmonkey .earline.left {
+  position: absolute;
+  top: 25px;
+  left: 18px;
+  width: 70px;
+  height: 70px;
+  background-color: var(--salsek);
+  border: 5px solid #000;
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+.cmonkey .earline.right {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background-color: var(--salsek);
+  border: 5px solid #000;
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+
+/* 몽키 눈 */
+.cmonkey .face .eye {
+  position: absolute;
+  top: 200px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 140;
+}
+.eye.left {
+  left: 150px;
+}
+.eye.right {
+  right: 150px;
+}
+
+/* 몽키 볼터치 */
+.cmonkey .face .boltouch {
+  position: absolute;
+  top: 245px;
+  width: 55px;
+  height: 15px;
+  border-radius: 90%;
+  background-color: var(--bolsek);
+  z-index: 140;
+}
+.boltouch.left {
+  left: 135px;
+}
+.boltouch.right {
+  right: 135px;
+}
+
+/* 몽키 코 */
+.cmonkey .face .nose {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+  z-index: 140;
+}
+.nose.left {
+  left: 198px;
+  bottom: 135px;
+  transform: rotate(30deg);
+}
+.nose.right {
+  right: 198px;
+  bottom: 135px;
+  transform: rotate(150deg);
+}
+.nose.bottom {
+  right: 210px;
+  bottom: 117px;
+  transform: rotate(90deg);
+}
+
+/* 몽키 입 */
+.cmonkey .face .mouth {
+  position: absolute;
+  width: 55px;
+  height: 15px;
+  right: 192px;
+  bottom: 104px;
+  border-radius: 90%;
+  border: 5px solid black;
+  background-color: var(--salsek);
+  z-index: 120;
+}
